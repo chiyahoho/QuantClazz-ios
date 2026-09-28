@@ -8,7 +8,7 @@ iOS 17+ SwiftUI 论坛客户端，连接量化小论坛官网现有接口。正�
 
 1. 用支持 Swift 6.2 的 Xcode 26 或更新版本直接打开 `QuantClass.xcodeproj`（不要打开仓库文件夹），选择共享方案 `QuantClass`。`QuantClass` 是应用；`Packages/ForumCore` 是应用依赖的本地库。如果 Xcode 仍显示之前从仓库根目录打开的 `ForumCore` Swift 包窗口，请关闭该窗口，再打开 `QuantClass.xcodeproj`。本机使用 Xcode 27 验证。
 2. 选择 iPhone 模拟器并运行。真机运行时，在 Signing & Capabilities 中选择自己的 Apple 开发团队；项目使用自动签名，未预设团队。
-3. 应用包标识为 `io.github.chiyahoho.QuantClass`。正式发布前需补充隐私说明等发布材料。
+3. 应用包标识为 `io.github.chiyahoho.QuantClazz`。正式发布前需补充隐私说明等发布材料。
 
 命令行构建（本机 Xcode 路径）：
 

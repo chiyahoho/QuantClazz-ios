@@ -26,10 +26,10 @@ struct OfficialLoginView: View {
                         HStack(spacing: 10) {
                             Image("BrandLogo").resizable().frame(width: 218.5, height: 44)
                                 .frame(width: 44, height: 44, alignment: .leading).clipped().accessibilityHidden(true)
-                            Text("量化小论坛").font(.system(size: 18, weight: .semibold)).foregroundStyle(navy)
+                            Text("QuantClazz").font(.system(size: 18, weight: .semibold)).foregroundStyle(navy)
                         }
                         VStack(spacing: 10) {
-                            Text("登录量化小论坛").font(.system(size: 23, weight: .semibold)).foregroundStyle(navy)
+                            Text("登录 QuantClazz").font(.system(size: 23, weight: .semibold)).foregroundStyle(navy)
                             Text("使用微信扫码，继续浏览与收藏").font(.subheadline).foregroundStyle(secondary)
                         }
                         qrPanel.padding(.top, 8)

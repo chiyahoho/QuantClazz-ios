@@ -137,7 +137,7 @@ final class AppSession: ObservableObject {
 private enum CredentialStore {
     static var query: [String: Any] {
         [kSecClass as String: kSecClassGenericPassword,
-         kSecAttrService as String: "io.github.chiyahoho.QuantClass.forum",
+         kSecAttrService as String: "io.github.chiyahoho.QuantClazz.forum",
          kSecAttrAccount as String: "access_token"]
     }
     static func read() throws -> String? {

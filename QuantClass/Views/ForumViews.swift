@@ -160,7 +160,7 @@ struct FeedView: View {
         }
         .navigationTitle("").navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .principal) { HStack(spacing: 7) { Image("BrandLogo").resizable().frame(width: 119.18, height: 24).frame(width: 24, height: 24, alignment: .leading).clipped().accessibilityHidden(true); Text("量化小论坛").font(.system(size: 20, weight: .semibold)).foregroundStyle(ForumTheme.navy) } }
+            ToolbarItem(placement: .principal) { HStack(spacing: 7) { Image("BrandLogo").resizable().frame(width: 119.18, height: 24).frame(width: 24, height: 24, alignment: .leading).clipped().accessibilityHidden(true); Text("QuantClazz").font(.system(size: 20, weight: .semibold)).foregroundStyle(ForumTheme.navy) } }
             ToolbarItem(placement: .topBarTrailing) { Menu {
                 Button("全部分区") { selectCategory(nil) }
                 ForEach(categories, id: \.id) { value in Button(value.name) { selectCategory(value.id) } }
@@ -348,7 +348,7 @@ struct ThreadView: View {
                     VStack(spacing: 20) {
                         Text(detail.summary.title).font(.system(size: 23, weight: .semibold)).foregroundStyle(ForumTheme.navy)
                         Text("此内容需要登录或相应访问权限。").foregroundStyle(ForumTheme.secondary)
-                        Button("登录量化小论坛") { session.showLogin = true }
+                        Button("登录 QuantClazz") { session.showLogin = true }
                         Link("在官网查看", destination: officialURL)
                     }.padding(24).frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
@@ -746,6 +746,19 @@ struct AccountView: View {
                     NavigationLink { ActivityHistoryView(kind: .voted) } label: { Label("投籽记录", systemImage: "leaf") }
                     NavigationLink { NotificationsView() } label: { HStack { Label("消息提醒", systemImage: "bell"); Spacer(); if let count = session.currentUser?.unreadNotifications, count > 0 { Text("\(count)").font(.caption.weight(.semibold)).foregroundStyle(.white).padding(.horizontal, 7).padding(.vertical, 3).background(.red, in: Capsule()) } } }
                 } else { Button("登录后查看活动记录") { session.showLogin = true } }
+            }
+            Section {
+                VStack(alignment: .leading, spacing: 8) {
+                    Label("第三方客户端", systemImage: "info.circle.fill")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(ForumTheme.navy)
+                    Text("QuantClazz 是第三方客户端，与量化小论坛官方无隶属、授权或背书关系。")
+                        .font(.footnote)
+                        .foregroundStyle(ForumTheme.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(.vertical, 6)
+                .accessibilityElement(children: .combine)
             }
         }.navigationTitle("我的").navigationBarTitleDisplayMode(.inline).scrollContentBackground(.hidden).background(ForumTheme.background)
             .task { if session.isLoggedIn { await session.refreshCurrentUser(force: false) } }
