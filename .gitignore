@@ -1,0 +1,30 @@
+.DS_Store
+.build/
+DerivedData/
+.swiftpm/
+*.xcuserstate
+xcuserdata/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.p12
+*.pfx
+*.cer
+*.crt
+*.key
+*.pem
+*.mobileprovision
+
+# Xcode local build and signing state
+build/
+*.xccheckout
+*.xcscmblueprint
+*.xcsettings
+*.moved-aside
+*.ipa
+*.dSYM
+*.dSYM.zip
+*.xcarchive
+*.signing
