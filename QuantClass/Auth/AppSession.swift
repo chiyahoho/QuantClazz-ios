@@ -54,7 +54,7 @@ final class AppSession: ObservableObject {
             isValidating = false
             await refreshCurrentUser()
         } catch {
-            guard generation == request, !Task.isCancelled else { return }
+            guard generation == request, !Task.isCancelled, !Self.isCancellation(error) else { return }
             authError = error.localizedDescription
             if case ForumError.unauthorized = error, token == nil {
                 token = nil
@@ -80,6 +80,7 @@ final class AppSession: ObservableObject {
     }
 
     func handle(_ error: Error) {
+        guard !Self.isCancellation(error) else { return }
         authError = error.localizedDescription
         if case ForumError.unauthorized = error {
             generation += 1
@@ -119,17 +120,24 @@ final class AppSession: ObservableObject {
             currentUser = user
             lastProfileRefresh = Date()
         } catch {
-            guard generation == request, identityVersion == version, profileRequest == profileRequestID, !Task.isCancelled else { return }
+            guard generation == request, identityVersion == version, profileRequest == profileRequestID,
+                  !Task.isCancelled, !Self.isCancellation(error) else { return }
             profileError = error.localizedDescription
             if case ForumError.unauthorized = error { handle(error) }
         }
+    }
+
+    private static func isCancellation(_ error: Error) -> Bool {
+        if error is CancellationError { return true }
+        let nsError = error as NSError
+        return nsError.domain == NSURLErrorDomain && nsError.code == NSURLErrorCancelled
     }
 }
 
 private enum CredentialStore {
     static var query: [String: Any] {
         [kSecClass as String: kSecClassGenericPassword,
-         kSecAttrService as String: "com.chiya.quantclass.forum",
+         kSecAttrService as String: "io.github.chiyahoho.QuantClass.forum",
          kSecAttrAccount as String: "access_token"]
     }
     static func read() throws -> String? {

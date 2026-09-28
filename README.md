@@ -6,15 +6,15 @@ iOS 17+ SwiftUI 论坛客户端，连接量化小论坛官网现有接口。正�
 
 ## 在 Xcode 运行
 
-1. 用支持 Swift 6.2 的 Xcode 26 或更新版本打开 `QuantClass.xcodeproj`，选择共享方案 `QuantClass`。本机使用 Xcode 27 验证。
+1. 用支持 Swift 6.2 的 Xcode 26 或更新版本直接打开 `QuantClass.xcodeproj`（不要打开仓库文件夹），选择共享方案 `QuantClass`。`QuantClass` 是应用；`Packages/ForumCore` 是应用依赖的本地库。如果 Xcode 仍显示之前从仓库根目录打开的 `ForumCore` Swift 包窗口，请关闭该窗口，再打开 `QuantClass.xcodeproj`。本机使用 Xcode 27 验证。
 2. 选择 iPhone 模拟器并运行。真机运行时，在 Signing & Capabilities 中选择自己的 Apple 开发团队；项目使用自动签名，未预设团队。
-3. 应用包标识为 `com.chiya.quantclass`。正式发布前需补充应用图标、隐私说明等发布材料。
+3. 应用包标识为 `io.github.chiyahoho.QuantClass`。正式发布前需补充隐私说明等发布材料。
 
 命令行构建（本机 Xcode 路径）：
 
 ```sh
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild -project QuantClass.xcodeproj -scheme QuantClass -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/QuantClassDerivedData CODE_SIGN_IDENTITY=- CODE_SIGNING_ALLOWED=YES build
-DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcrun swift test
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcrun swift test --package-path Packages/ForumCore
 ```
 
 模拟器也需要签名以获得钥匙串身份；上面的命令使用临时签名。不要添加 `CODE_SIGNING_ALLOWED=NO`，否则钥匙串可能返回 `-34018`（缺少身份授权）。真机签名由 Xcode 和你选择的开发团队处理。
@@ -29,7 +29,7 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcrun swift test
 
 网页使用应用专用的临时 WebKit 数据存储，不读取浏览器凭据。外部网站链接交给系统浏览器；未经确认的跨域 SSO 导航不会在登录视图中自动继续，已确认的官网微信登录使用 `api.quantclass.cn` 内嵌扫码页面，允许此官方子页面加载，但不会读取其存储。已由用户在模拟器完成微信扫码，并验证原生登录、收藏接口和重启恢复。同一手机识别截图的扫码方式尚未验证。官网页面或风控变化可能使登录、验证及接口暂时不可用；应用展示错误，不绕过验证，也不收集用户密码。
 
-核心网络及数据模型在本地 Swift 包 `ForumCore` 中。接口兼容性取决于官网当前行为；开发用应用尚不具备正式商店发布所需的应用图标与完整发布材料。
+核心网络及数据模型在本地 Swift 包 `Packages/ForumCore` 中。接口兼容性取决于官网当前行为；开发用应用尚不具备正式商店发布所需的完整发布材料。
 
 ## 阅读与视觉
 
