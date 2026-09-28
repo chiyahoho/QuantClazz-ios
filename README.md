@@ -1,19 +1,19 @@
-# 量化小论坛
+# QuantClazz
 
-iOS 17+ SwiftUI 论坛客户端，连接量化小论坛官网现有接口。正文使用 Swift 官方 [swift-markdown](https://github.com/swiftlang/swift-markdown) 0.9.0 解析；依赖通过 Swift Package Manager 获取。
+QuantClazz 是 iOS 17+ SwiftUI 论坛客户端，连接量化小论坛官网现有接口。正文使用 Swift 官方 [swift-markdown](https://github.com/swiftlang/swift-markdown) 0.9.0 解析；依赖通过 Swift Package Manager 获取。
 
 本项目是社区开发的非官方客户端，与量化小论坛官网及其运营方不存在隶属、授权或背书关系。项目中保留的官网名称、品牌标志等素材用于识别所连接的服务，其权利归各自权利人所有；论坛用户发布的内容也归相应权利人所有。
 
 ## 在 Xcode 运行
 
-1. 用支持 Swift 6.2 的 Xcode 26 或更新版本直接打开 `QuantClass.xcodeproj`（不要打开仓库文件夹），选择共享方案 `QuantClass`。`QuantClass` 是应用；`Packages/ForumCore` 是应用依赖的本地库。如果 Xcode 仍显示之前从仓库根目录打开的 `ForumCore` Swift 包窗口，请关闭该窗口，再打开 `QuantClass.xcodeproj`。本机使用 Xcode 27 验证。
-2. 选择 iPhone 模拟器并运行。真机运行时，在 Signing & Capabilities 中选择自己的 Apple 开发团队；项目使用自动签名，未预设团队。
+1. 用支持 Swift 6.2 的 Xcode 26 或更新版本直接打开 `QuantClazz.xcodeproj`（不要打开仓库文件夹），选择共享方案 `QuantClazz`。`QuantClazz` 是应用；`Packages/ForumCore` 是应用依赖的本地库。如果 Xcode 仍显示之前从仓库根目录打开的 `ForumCore` Swift 包窗口，请关闭该窗口，再打开 `QuantClazz.xcodeproj`。本机使用 Xcode 27 验证。
+2. 选择 iPhone 模拟器并运行。真机运行时，在 Signing & Capabilities 中选择自己的 Apple 开发团队；项目使用自动签名。
 3. 应用包标识为 `io.github.chiyahoho.QuantClazz`。正式发布前需补充隐私说明等发布材料。
 
 命令行构建（本机 Xcode 路径）：
 
 ```sh
-DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild -project QuantClass.xcodeproj -scheme QuantClass -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/QuantClassDerivedData CODE_SIGN_IDENTITY=- CODE_SIGNING_ALLOWED=YES build
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild -project QuantClazz.xcodeproj -scheme QuantClazz -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/QuantClazzDerivedData CODE_SIGN_IDENTITY=- CODE_SIGNING_ALLOWED=YES build
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcrun swift test --package-path Packages/ForumCore
 ```
 

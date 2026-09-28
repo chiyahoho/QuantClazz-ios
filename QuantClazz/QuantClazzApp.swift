@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct QuantClassApp: App {
+struct QuantClazzApp: App {
     @StateObject private var session = AppSession()
     @Environment(\.scenePhase) private var scenePhase
     var body: some Scene {

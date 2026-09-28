@@ -11,11 +11,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A00000000000000000000009 /* QuantClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000009 /* QuantClazz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantClazz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A00000000000000000000005 /* QuantClass */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = QuantClass; sourceTree = "<group>"; };
+		A00000000000000000000005 /* QuantClazz */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = QuantClazz; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +33,7 @@
 		A00000000000000000000003 = {
 			isa = PBXGroup;
 			children = (
-				A00000000000000000000005 /* QuantClass */,
+				A00000000000000000000005 /* QuantClazz */,
 				A00000000000000000000004 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,7 +41,7 @@
 		A00000000000000000000004 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A00000000000000000000009 /* QuantClass.app */,
+				A00000000000000000000009 /* QuantClazz.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -49,9 +49,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A00000000000000000000002 /* QuantClass */ = {
+		A00000000000000000000002 /* QuantClazz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A00000000000000000000011 /* Build configuration list for PBXNativeTarget "QuantClass" */;
+			buildConfigurationList = A00000000000000000000011 /* Build configuration list for PBXNativeTarget "QuantClazz" */;
 			buildPhases = (
 				A00000000000000000000006 /* Sources */,
 				A00000000000000000000007 /* Frameworks */,
@@ -62,14 +62,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A00000000000000000000005 /* QuantClass */,
+				A00000000000000000000005 /* QuantClazz */,
 			);
-			name = QuantClass;
+			name = QuantClazz;
 			packageProductDependencies = (
 				A00000000000000000000021 /* ForumCore */,
 			);
-			productName = QuantClass;
-			productReference = A00000000000000000000009 /* QuantClass.app */;
+			productName = QuantClazz;
+			productReference = A00000000000000000000009 /* QuantClazz.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -86,7 +86,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A00000000000000000000010 /* Build configuration list for PBXProject "QuantClass" */;
+			buildConfigurationList = A00000000000000000000010 /* Build configuration list for PBXProject "QuantClazz" */;
 			compatibilityVersion = "Xcode 16.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -104,7 +104,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A00000000000000000000002 /* QuantClass */,
+				A00000000000000000000002 /* QuantClazz */,
 			);
 		};
 /* End PBXProject section */
@@ -209,7 +209,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A00000000000000000000010 /* Build configuration list for PBXProject "QuantClass" */ = {
+		A00000000000000000000010 /* Build configuration list for PBXProject "QuantClazz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A00000000000000000000012 /* Debug */,
@@ -218,7 +218,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A00000000000000000000011 /* Build configuration list for PBXNativeTarget "QuantClass" */ = {
+		A00000000000000000000011 /* Build configuration list for PBXNativeTarget "QuantClazz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A00000000000000000000014 /* Debug */,
